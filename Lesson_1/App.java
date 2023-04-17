@@ -4,9 +4,9 @@ import java.io.File;
 
 public class App{
     public static void main(String[] args) {
-        // System.out.println(getFileSize(new File("123")));
+        System.out.println(getFileSize(new File("123")));
         System.out.println(devide(-10, 0));
-        // a();
+        a();
         
 
         
