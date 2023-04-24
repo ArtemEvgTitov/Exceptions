@@ -17,7 +17,7 @@ public class Task1 {
     public static float GetFloat() {
         try (Scanner in = new Scanner(System.in)) {
             System.out.print("Enter float number: ");
-            String number = in.next().replace(",", ".");
+            String number = in.nextLine().replace(",", ".");
             try {
                 float result = Float.parseFloat(number);
                 return result;
