@@ -22,7 +22,7 @@ public class Task1 {
                 float result = Float.parseFloat(number);
                 return result;
             } catch (Exception e) {
-                System.out.println("Invalid input: " + "'" + number + "'." + " Try again");
+                System.out.println("Invalid input: '" +  number + "'.' Try again");
                 return GetFloat();
             }
         }
