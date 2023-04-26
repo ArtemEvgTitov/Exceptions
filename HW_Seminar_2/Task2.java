@@ -24,6 +24,5 @@ public class Task2 {
         } catch (Exception err) {
             System.out.println(err.getMessage());
         }
-
     }
 }

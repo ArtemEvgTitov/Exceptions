@@ -25,8 +25,6 @@ public class Task4 {
                 System.out.println(err.getMessage());
                 return GetString();
             }
-
         }
-
     }
 }
