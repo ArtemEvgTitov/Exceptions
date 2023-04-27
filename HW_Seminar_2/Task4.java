@@ -21,8 +21,8 @@ public class Task4 {
                     throw new RuntimeException("Empty line");
                 }
                 return string;
-            } catch (Exception err) {
-                System.out.println(err.getMessage());
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
                 return GetString();
             }
         }
