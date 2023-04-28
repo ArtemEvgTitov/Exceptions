@@ -5,6 +5,8 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
 public class Sem2 {
 
@@ -24,24 +26,23 @@ public class Sem2 {
     // }
     // }
 
-    // public static void main(String[] args) {
-    // try (Scanner in = new Scanner(System.in)) {
-    // int[] arr = new int[10];
-    // System.out.println("Enter index of element of array that do you want write
-    // first value");
-    // int index = 0;
-    // try {
-    // index = in.nextInt();
-    // } catch (NumberFormatException | InputMismatchException err) {
-    // System.out.println("Invalid value for index");
-    // }
-    // try {
-    // arr[index] = 1;
-    // } catch (IndexOutOfBoundsException err) {
-    // System.out.println("Invalid index");
-    // }
-    // }
-    // }
+    public static void main(String[] args) {
+        try (Scanner in = new Scanner(System.in)) {
+            int[] arr = new int[10];
+            System.out.println("Enter index of element of array that do you want write first value");
+            int index = 0;
+            try {
+                index = in.nextInt();
+            } catch (NumberFormatException | InputMismatchException err) {
+                System.out.println("Invalid value for index");
+            }
+            try {
+                arr[index] = 1;
+            } catch (IndexOutOfBoundsException err) {
+                System.out.println("Invalid index");
+            }
+        }
+    }
 
     // Обработайте возможные исключительные ситуации.
     // “Битые” значения в исходном массиве считайте нулями.
