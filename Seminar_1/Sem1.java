@@ -5,6 +5,7 @@ public class Sem1 {
     // Реализуйте метод, принимающий в качестве аргумента целочисленный массив.
     // Если длина массива меньше некоторого заданного минимума, метод возвращает -1,
     // в качестве кода ошибки, иначе - длину массива.
+
     public static int ShowArray(int[] arr) {
         if (arr == null || arr.length < 1) {
             return -1;
@@ -27,6 +28,7 @@ public class Sem1 {
     // обработает возвращенное значение и покажет читаемый результат пользователю.
     // Например, если вернулся -2, пользователю выведется сообщение: “Искомый
     // элемент не найден”.
+
     public static int findElementIndex(int[] arr, int element, int minLength) {
         if (arr == null) {
             return -3;
@@ -51,6 +53,7 @@ public class Sem1 {
     // и в каждой ячейке может лежать только значение 0 или 1.
     // Если нарушается одно из условий, метод должен бросить RuntimeException с
     // сообщением об ошибке.
+
     public static int GetSummaryElementsInArray(int[][] arr) {
         if (arr == null || arr[0].length != arr[1].length)
             throw new RuntimeException("Unvalid array");
@@ -72,6 +75,7 @@ public class Sem1 {
     // и возвращающий новый массив, каждый элемент которого равен сумме элементов
     // двух входящих массивов в той же ячейке.
     // Если длины массивов не равны, необходимо как-то оповестить пользователя.
+    
     public static int[] GetNewArr(int[] arr1, int[] arr2) {
         if (arr1 == null || arr2 == null || arr1.length != arr2.length) {
             throw new RuntimeException("Unvalid arrays");
