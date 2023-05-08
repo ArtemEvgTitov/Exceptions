@@ -8,6 +8,7 @@ public class task1 {
             System.out.println(e.getMessage());
         }
     }
+
     public static void doSomething() throws RuntimeException {
         throw new RuntimeException("This is exception");
     }

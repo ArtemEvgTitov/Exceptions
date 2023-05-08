@@ -18,7 +18,7 @@ public class task3 {
         }
 
         try {
-            Integer[] arr = new Integer[]{1, 2, 3, null, 4};
+            Integer[] arr = new Integer[] { 1, 2, 3, null, 4 };
             for (Integer integer : arr) {
                 System.out.println(integer);
                 if (integer == null) {

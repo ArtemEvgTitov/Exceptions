@@ -12,7 +12,8 @@ import java.util.zip.DataFormatException;
 
 public class task4 {
     public static void main(String[] args) throws Exception {
-        String[][] arr = new String[][]{{"1", "1", "1", "1"}, {"1", "1", "1", "1"}, {"1", "1", "1", "1"}, {"1", "1", "1", "1"}};
+        String[][] arr = new String[][] { { "1", "1", "1", "1" }, { "1", "1", "1", "1" }, { "1", "1", "1", "1" },
+                { "1", "1", "1", "1" } };
         try {
             System.out.println(taskMethod(arr));
         } catch (Exception e) {

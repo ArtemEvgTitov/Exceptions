@@ -44,6 +44,7 @@ class Counter implements AutoCloseable {
     public int getNum() {
         return num;
     }
+
     public void setNum(Integer val) {
         this.num = val;
     }
