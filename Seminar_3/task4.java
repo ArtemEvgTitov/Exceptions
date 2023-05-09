@@ -43,6 +43,7 @@ public class task4 {
     }
 }
 
+
 class MyArraySizeException extends ArrayIndexOutOfBoundsException {
     String message = "Invalid size of array";
 
