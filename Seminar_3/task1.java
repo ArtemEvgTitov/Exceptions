@@ -9,6 +9,7 @@ public class task1 {
         }
     }
 
+    
     public static void doSomething() throws RuntimeException {
         throw new RuntimeException("This is exception");
     }
