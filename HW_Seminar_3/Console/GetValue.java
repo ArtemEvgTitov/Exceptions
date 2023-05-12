@@ -14,5 +14,5 @@ public class GetValue implements IGetValue {
         System.out.print(" --> ");
         return in.nextLine();
     }
-    
+
 }
