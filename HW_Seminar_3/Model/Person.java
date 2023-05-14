@@ -17,6 +17,10 @@ public class Person implements IPerson, AutoCloseable {
         this.gender = gender;
     }
 
+    public String getSurname() {
+        return surname;
+    }
+
     @Override
     public String toString() {
         return surname + ';' + name + ';' + patronymic + ';' + birthday + ';' + phoneNumber + ";" + gender + '\n';
