@@ -1,5 +1,7 @@
 package HW_Seminar_3.Model;
 
+import HW_Seminar_3.Presenter.Exceptions.*;
+
 public class Person implements IPerson, AutoCloseable {
     private String surname;
     private String name;
@@ -15,6 +17,31 @@ public class Person implements IPerson, AutoCloseable {
         this.birthday = birthday;
         this.phoneNumber = phoneNumber;
         this.gender = gender;
+    }
+
+    public void ParseString(String str) throws Exception {
+        String[] data = str.strip().split(" ");
+        if (data.length != 6) {
+            throw new SizeArrayException();
+        }
+        this.surname = data[0];
+        this.name = data[1];
+        this.patronymic = data[2];
+        if (Check.CheckCalendar(data[3])) {
+            this.birthday = data[3];
+        } else {
+            throw new InvalidDateException();
+        }
+        if (!Check.CheckPhone(data[4])) {
+            throw new NotDigitInPhoneException();
+        } else {
+            this.phoneNumber = data[4];
+        }
+        if (!Check.CheckGender(data[5])) {
+            throw new InvalidGenderException();
+        } else {
+            this.gender = data[5];
+        }
     }
 
     public String getSurname() {
