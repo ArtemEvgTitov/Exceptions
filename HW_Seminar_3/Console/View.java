@@ -2,8 +2,8 @@ package HW_Seminar_3.Console;
 
 public class View {
 
-    GetValue getString;
-    SetValue setString;
+    GetValue getString = new GetValue();
+    SetValue setString = new SetValue();
 
 
     public String GetString() {
