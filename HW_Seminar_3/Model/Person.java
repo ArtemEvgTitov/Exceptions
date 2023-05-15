@@ -10,14 +10,14 @@ public class Person implements IPerson, AutoCloseable {
     private String phoneNumber;
     private String gender;
 
-    Person(String surname, String name, String patronymic, String birthday, String phoneNumber, String gender) {
-        this.surname = surname;
-        this.name = name;
-        this.patronymic = patronymic;
-        this.birthday = birthday;
-        this.phoneNumber = phoneNumber;
-        this.gender = gender;
-    }
+    // Person(String surname, String name, String patronymic, String birthday, String phoneNumber, String gender) {
+    //     this.surname = surname;
+    //     this.name = name;
+    //     this.patronymic = patronymic;
+    //     this.birthday = birthday;
+    //     this.phoneNumber = phoneNumber;
+    //     this.gender = gender;
+    // }
 
     public void ParseString(String str) throws Exception {
         String[] data = str.strip().split(" ");
