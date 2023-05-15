@@ -5,11 +5,17 @@ import java.io.File;
 import java.io.FileWriter;
 import java.util.Scanner;
 
-import HW_Seminar_3.Presenter.Exceptions.CopyStringException;
+import HW_Seminar_3.Presenter.Exceptions.CopyError;
 
+/**
+ * Класс записи данных в файл
+ */
 public class WriteToFile implements IWriteToFile {
 
     @Override
+    /**
+     * Метод записи данных в файл
+     */
     public void RecData(Person data) {
 
         String fileName = data.getSurname() + ".csv";
@@ -17,7 +23,7 @@ public class WriteToFile implements IWriteToFile {
         try {
             File file = new File(fileName);
             if (file.createNewFile()) {
-                System.out.println("Создан новый файл: " + data.getSurname()+ ".csv");
+                System.out.println("Создан новый файл: " + data.getSurname() + ".csv\n");
             }
         } catch (Exception e) {
             throw new RuntimeException(e.getMessage());
@@ -29,7 +35,7 @@ public class WriteToFile implements IWriteToFile {
             reader.useDelimiter("\n");
             while (reader.hasNext()) {
                 if (reader.next().equals(data.toString().strip())) {
-                    throw new CopyStringException();
+                    throw new CopyError();
                 }
             }
             bufferedWriter.write(data.toString());
@@ -38,6 +44,7 @@ public class WriteToFile implements IWriteToFile {
             throw new RuntimeException(e.getMessage());
         }
 
-        System.out.println("[INFO] Запись завершена");
+        System.out.println("[INFO] Запись завершена\n");
     }
+
 }

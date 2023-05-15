@@ -1,8 +1,10 @@
 package HW_Seminar_3.Console;
 
 /**
- * Интерфейс, который содержит метод запроса от пользователя
+ * Интерфейс для GetValue
  */
 public interface IGetValue {
+
     public String getValue();
+
 }

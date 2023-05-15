@@ -2,7 +2,11 @@ package HW_Seminar_3.Model;
 
 import HW_Seminar_3.Presenter.Exceptions.*;
 
+/**
+ * Класс с конструктором Person
+ */
 public class Person implements IPerson, AutoCloseable {
+
     private String surname;
     private String name;
     private String patronymic;
@@ -10,19 +14,13 @@ public class Person implements IPerson, AutoCloseable {
     private String phoneNumber;
     private String gender;
 
-    // Person(String surname, String name, String patronymic, String birthday, String phoneNumber, String gender) {
-    //     this.surname = surname;
-    //     this.name = name;
-    //     this.patronymic = patronymic;
-    //     this.birthday = birthday;
-    //     this.phoneNumber = phoneNumber;
-    //     this.gender = gender;
-    // }
-
-    public void ParseString(String str) throws Exception {
-        String[] data = str.strip().split(" ");
+    /**
+     * Конструктор Person
+     */
+    public Person(String string) throws Exception {
+        String[] data = string.strip().split(" ");
         if (data.length != 6) {
-            throw new SizeArrayException();
+            throw new ArrayError();
         }
         this.surname = data[0];
         this.name = data[1];
@@ -30,25 +28,32 @@ public class Person implements IPerson, AutoCloseable {
         if (Check.CheckCalendar(data[3])) {
             this.birthday = data[3];
         } else {
-            throw new InvalidDateException();
+            throw new DateError();
         }
         if (!Check.CheckPhone(data[4])) {
-            throw new NotDigitInPhoneException();
+            throw new PhoneError();
         } else {
             this.phoneNumber = data[4];
         }
         if (!Check.CheckGender(data[5])) {
-            throw new InvalidGenderException();
+            throw new GenderError();
         } else {
             this.gender = data[5];
         }
     }
 
+    @Override
+    /**
+     * Метод запроса фамилии
+     */
     public String getSurname() {
         return surname;
     }
 
     @Override
+    /**
+     * Метод перевода Person в строку
+     */
     public String toString() {
         return surname + ';' + name + ';' + patronymic + ';' + birthday + ';' + phoneNumber + ";" + gender + '\n';
     }
@@ -62,4 +67,5 @@ public class Person implements IPerson, AutoCloseable {
         this.phoneNumber = null;
         this.gender = null;
     }
+
 }

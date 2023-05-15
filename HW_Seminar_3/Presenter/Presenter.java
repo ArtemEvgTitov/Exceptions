@@ -4,24 +4,34 @@ import HW_Seminar_3.Console.View;
 import HW_Seminar_3.Model.Person;
 import HW_Seminar_3.Model.WriteToFile;
 
+/**
+ * Класс, содержащий запуск программы
+ */
 public class Presenter {
 
-    View view = new View();
-    Person person = new Person();
-    WriteToFile file = new WriteToFile();
-
+    /**
+     * Метод запуска программы
+     */
     public void run() throws Exception {
 
+        View view = new View();
+        Person person = null;
+        WriteToFile file = new WriteToFile();
+
+        view.StartMessage();
+
         while (true) {
-            view.StartMessage();
             String string = view.GetString();
             if (string.equals("exit")) {
                 break;
+            }
+            if (string.equals("help")) {
+                view.StartMessage();
             } else {
                 try {
-                    person.ParseString(string);
+                    person = new Person(string);
                 } catch (Exception e) {
-                    System.out.println(e.getMessage());
+                    System.out.println(e.getMessage() + "\nДля вывода справки введите help");
                 }
             }
             if (person != null) {
@@ -33,4 +43,5 @@ public class Presenter {
             }
         }
     }
+
 }
