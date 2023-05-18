@@ -9,5 +9,4 @@ public class Application {
         Presenter app = new Presenter();
         app.run();
     }
-
 }
