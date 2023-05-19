@@ -39,11 +39,9 @@ public class WriteToFile implements IWriteToFile {
                 }
             }
             bufferedWriter.write(data.toString());
-
         } catch (Exception e) {
             throw new RuntimeException(e.getMessage());
         }
-
         System.out.println("[INFO] Запись завершена\n");
     }
 
